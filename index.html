@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare Hub - Mental Health Support Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>MindCare Hub</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#resources" class="nav-link">Resources</a></li>
+                <li class="nav-item"><a href="#counselors" class="nav-link">Counselors</a></li>
+                <li class="nav-item"><a href="#tools" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="emergency-btn" id="emergencyBtn">
+                    <i class="fas fa-phone"></i>
+                    Emergency Help
+                </button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Your Mental Health 
+                    <span class="gradient-text">Journey</span> 
+                    Starts Here
+                </h1>
+                <p class="hero-description">
+                    Comprehensive digital support system designed specifically for students in higher education. 
+                    Find resources, connect with professionals, and take charge of your wellbeing.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Resources</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Counselors</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" id="getStartedBtn">
+                        <i class="fas fa-rocket"></i>
+                        Get Started
+                    </button>
+                    <button class="btn btn-secondary" id="moodCheckBtn">
+                        <i class="fas fa-heart"></i>
+                        Check Your Mood
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card floating">
+                    <i class="fas fa-brain hero-icon"></i>
+                    <h3>Mental Wellness</h3>
+                    <p>Track and improve your mental health journey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="section quick-access-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Access to Support</h2>
+                <p class="section-subtitle">Get immediate help or explore our comprehensive resources</p>
+            </div>
+            <div class="quick-access-grid">
+                <div class="access-card crisis-card" data-category="crisis">
+                    <div class="card-icon crisis-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="card-title">Crisis Support</h3>
+                    <p class="card-description">Immediate help and emergency helpline numbers available 24/7</p>
+                    <button class="btn btn-danger card-btn" data-action="crisis">
+                        <i class="fas fa-phone"></i>
+                        Get Help Now
+                    </button>
+                    <div class="card-badge">Urgent</div>
+                </div>
+                
+                <div class="access-card" data-category="counselors">
+                    <div class="card-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="card-title">Find Counselors</h3>
+                    <p class="card-description">Connect with verified mental health professionals</p>
+                    <button class="btn btn-primary card-btn" data-action="counselors">
+                        <i class="fas fa-search"></i>
+                        Find Support
+                    </button>
+                </div>
+                
+                <div class="access-card" data-category="tools">
+                    <div class="card-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="card-title">Wellness Tools</h3>
+                    <p class="card-description">Meditation, mood tracking, and self-assessment tools</p>
+                    <button class="btn btn-primary card-btn" data-action="tools">
+                        <i class="fas fa-play"></i>
+                        Start Journey
+                    </button>
+                </div>
+                
+                <div class="access-card" data-category="resources">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="card-title">Learning Hub</h3>
+                    <p class="card-description">Articles, videos, and guides on mental health topics</p>
+                    <button class="btn btn-primary card-btn" data-action="resources">
+                        <i class="fas fa-graduation-cap"></i>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section id="search" class="section search-section">
+        <div class="container">
+            <div class="search-wrapper">
+                <div class="search-header">
+                    <h2 class="section-title">Find Exactly What You Need</h2>
+                    <p class="section-subtitle">Search through our comprehensive database of resources and support</p>
+                </div>
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search for resources, counselors, topics..." id="searchInput">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions">
+                        <!-- Dynamic suggestions will appear here -->
+                    </div>
+                </div>
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-globe"></i>
+                            All
+                        </button>
+                        <button class="filter-btn" data-filter="anxiety">
+                            <i class="fas fa-heart"></i>
+                            Anxiety
+                        </button>
+                        <button class="filter-btn" data-filter="depression">
+                            <i class="fas fa-cloud-rain"></i>
+                            Depression
+                        </button>
+                        <button class="filter-btn" data-filter="stress">
+                            <i class="fas fa-lightning-bolt"></i>
+                            Stress
+                        </button>
+                        <button class="filter-btn" data-filter="counseling">
+                            <i class="fas fa-comments"></i>
+                            Counseling
+                        </button>
+                        <button class="filter-btn" data-filter="wellness">
+                            <i class="fas fa-leaf"></i>
+                            Wellness
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mood Tracker Section -->
+    <section id="tools" class="section mood-section">
+        <div class="container">
+            <div class="mood-tracker-wrapper">
+                <div class="mood-tracker-header">
+                    <h2 class="section-title">How Are You Feeling Today?</h2>
+                    <p class="section-subtitle">
+                        Track your mood anonymously and get personalized recommendations
+                    </p>
+                </div>
+                
+                <div class="mood-tracker-content">
+                    <div class="mood-selection">
+                        <h3>Select Your Current Mood</h3>
+                        <div class="mood-options">
+                            <div class="mood-option" data-mood="excellent" data-score="5">
+                                <div class="mood-emoji">😄</div>
+                                <span class="mood-label">Excellent</span>
+                            </div>
+                            <div class="mood-option" data-mood="good" data-score="4">
+                                <div class="mood-emoji">😊</div>
+                                <span class="mood-label">Good</span>
+                            </div>
+                            <div class="mood-option" data-mood="okay" data-score="3">
+                                <div class="mood-emoji">😐</div>
+                                <span class="mood-label">Okay</span>
+                            </div>
+                            <div class="mood-option" data-mood="not-great" data-score="2">
+                                <div class="mood-emoji">😔</div>
+                                <span class="mood-label">Not Great</span>
+                            </div>
+                            <div class="mood-option" data-mood="struggling" data-score="1">
+                                <div class="mood-emoji">😢</div>
+                                <span class="mood-label">Struggling</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-details" id="moodDetails" style="display: none;">
+                        <h3>Tell us more (Optional)</h3>
+                        <div class="mood-factors">
+                            <div class="factor-group">
+                                <label>What's affecting your mood?</label>
+                                <div class="factor-tags">
+                                    <button class="factor-tag" data-factor="academic">Academic Stress</button>
+                                    <button class="factor-tag" data-factor="social">Social Issues</button>
+                                    <button class="factor-tag" data-factor="family">Family</button>
+                                    <button class="factor-tag" data-factor="health">Health</button>
+                                    <button class="factor-tag" data-factor="financial">Financial</button>
+                                    <button class="factor-tag" data-factor="relationship">Relationships</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mood-actions">
+                            <button class="btn btn-primary" id="submitMoodBtn">
+                                <i class="fas fa-check"></i>
+                                Submit Mood Check
+                            </button>
+                            <button class="btn btn-secondary" id="skipMoodBtn">
+                                <i class="fas fa-forward"></i>
+                                Skip Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="mood-feedback" id="moodFeedback" style="display: none;">
+                        <!-- Dynamic feedback content -->
+                    </div>
+                </div>
+                
+                <div class="wellness-tools">
+                    <h3>Quick Wellness Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card" data-tool="breathing">
+                            <div class="tool-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h4>Breathing Exercise</h4>
+                            <p>5-minute guided breathing</p>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-play"></i>
+                                Start
+                            </button>
+                        </div>
+                        <div class="tool-card" data-tool="meditation">
+                            <div class="tool-icon">
+                                <i class="fas fa-om"></i>
+                            </div>
+                            <h4>Quick Meditation</h4>
+                            <p>10-minute mindfulness</p>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-play"></i>
+                                Start
+                            </button>
+                        </div>
+                        <div class="tool-card" data-tool="journal">
+                            <div class="tool-icon">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <h4>Mood Journal</h4>
+                            <p>Write your thoughts</p>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-edit"></i>
+                                Write
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mental Health Resources</h2>
+                <p class="section-subtitle">Evidence-based resources curated by mental health professionals</p>
+            </div>
+            <div class="resources-filter-tabs">
+                <button class="tab-btn active" data-tab="all">All Resources</button>
+                <button class="tab-btn" data-tab="articles">Articles</button>
+                <button class="tab-btn" data-tab="videos">Videos</button>
+                <button class="tab-btn" data-tab="guides">Guides</button>
+                <button class="tab-btn" data-tab="tools">Interactive Tools</button>
+            </div>
+            <div class="resources-grid" id="resourcesGrid">
+                <!-- Resources will be populated dynamically -->
+            </div>
+            <div class="load-more-container">
+                <button class="btn btn-outline" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i>
+                    Load More Resources
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counselors Section -->
+    <section id="counselors" class="section counselors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Connect with Mental Health Professionals</h2>
+                <p class="section-subtitle">Find qualified counselors and therapists who understand student needs</p>
+            </div>
+            <div class="counselors-filters">
+                <div class="filter-row">
+                    <select class="filter-select" id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="online">Online Only</option>
+                    </select>
+                    <select class="filter-select" id="specialtyFilter">
+                        <option value="">All Specialties</option>
+                        <option value="anxiety">Anxiety Disorders</option>
+                        <option value="depression">Depression</option>
+                        <option value="stress">Stress Management</option>
+                        <option value="academic">Academic Counseling</option>
+                        <option value="career">Career Counseling</option>
+                    </select>
+                    <select class="filter-select" id="availabilityFilter">
+                        <option value="">Any Time</option>
+                        <option value="today">Available Today</option>
+                        <option value="week">This Week</option>
+                        <option value="emergency">Emergency Available</option>
+                    </select>
+                </div>
+            </div>
+            <div class="counselors-grid" id="counselorsGrid">
+                <!-- Counselors will be populated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis Support Modal -->
+    <div class="modal" id="emergencyModal">
+        <div class="modal-content crisis-modal">
+            <div class="modal-header crisis-header">
+                <h2>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Emergency Mental Health Support
+                </h2>
+                <button class="close-btn" id="closeEmergencyModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="crisis-message">
+                    <p><strong>If you are in immediate danger or having thoughts of self-harm, please contact emergency services immediately.</strong></p>
+                </div>
+                <div class="helpline-grid">
+                    <div class="helpline-card urgent">
+                        <div class="helpline-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Emergency Services</h3>
+                        <div class="helpline-number">100 / 108</div>
+                        <p>Immediate emergency response</p>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </button>
+                    </div>
+                    <div class="helpline-card">
+                        <div class="helpline-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>KIRAN Mental Health</h3>
+                        <div class="helpline-number">1800-599-0019</div>
+                        <p>24/7 toll-free helpline</p>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </button>
+                    </div>
+                    <div class="helpline-card">
+                        <div class="helpline-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Vandrevala Foundation</h3>
+                        <div class="helpline-number">9999-666-555</div>
+                        <p>Crisis support & counseling</p>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </button>
+                    </div>
+                    <div class="helpline-card">
+                        <div class="helpline-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Snehi Helpline</h3>
+                        <div class="helpline-number">91-20-6570-9090</div>
+                        <p>Emotional support</p>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </button>
+                    </div>
+                </div>
+                <div class="crisis-resources">
+                    <h3>Additional Support</h3>
+                    <div class="resource-links">
+                        <button class="btn btn-outline" data-action="chat">
+                            <i class="fas fa-comments"></i>
+                            Start Crisis Chat
+                        </button>
+                        <button class="btn btn-outline" data-action="locate">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Find Nearby Help
+                        </button>
+                        <button class="btn btn-outline" data-action="safety">
+                            <i class="fas fa-shield-alt"></i>
+                            Safety Planning
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fas fa-robot"></i>
+                    MindCare Assistant
+                </div>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hi! I'm your MindCare assistant. How can I help you today?</p>
+                        <div class="quick-responses">
+                            <button class="quick-response" data-response="mood">Check my mood</button>
+                            <button class="quick-response" data-response="resources">Find resources</button>
+                            <button class="quick-response" data-response="counselor">Find a counselor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" placeholder="Type your message..." id="chatInput">
+                <button class="chat-send" id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab" id="fabMain">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-menu">
+            <button class="fab-item" data-action="mood" title="Quick Mood Check">
+                <i class="fas fa-heart"></i>
+            </button>
+            <button class="fab-item" data-action="breathing" title="Breathing Exercise">
+                <i class="fas fa-wind"></i>
+            </button>
+            <button class="fab-item" data-action="emergency" title="Emergency Help">
+                <i class="fas fa-phone"></i>
+            </button>
+            <button class="fab-item" data-action="journal" title="Quick Journal">
+                <i class="fas fa-pen"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
