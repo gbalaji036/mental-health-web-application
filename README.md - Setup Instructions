@@ -1,0 +1,396 @@
+# MindCare Hub - Digital Mental Health Platform 🧠
+
+A comprehensive digital mental health support system designed specifically for students in higher education. This platform provides easy access to mental health resources, professional counselors, crisis support, and wellness tools.
+
+## 🌟 Features
+
+### Core Functionality
+- **Anonymous Mood Tracking** - Daily mood check-ins with personalized insights
+- **Resource Hub** - Curated mental health articles, videos, and guides
+- **Professional Directory** - Connect with verified counselors and therapists
+- **Crisis Support** - 24/7 emergency helplines and immediate resources
+- **Wellness Tools** - Breathing exercises, meditation, journaling
+- **AI Chat Assistant** - Intelligent support and resource recommendations
+
+### Advanced Features
+- **Personalized Recommendations** - AI-driven content suggestions
+- **Progress Analytics** - Track mood trends and wellness journey
+- **Appointment Booking** - Schedule sessions with mental health professionals
+- **Secure Data Export** - Download your personal mental health data
+- **Mobile-First Design** - Fully responsive across all devices
+- **Accessibility Features** - Screen reader support, keyboard navigation
+
+### Security & Privacy
+- **End-to-End Encryption** - All sensitive data is encrypted
+- **Anonymous Options** - Use features without creating an account
+- **GDPR Compliant** - Full control over your personal data
+- **No Data Selling** - Your privacy is never monetized
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn package manager
+- Modern web browser
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/your-organization/mindcare-hub.git
+cd mindcare-hub
+```
+
+2. **Setup Frontend**
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Serve the HTML files using a local server
+# Option 1: Using Python
+python -m http.server 3000
+
+# Option 2: Using Node.js http-server
+npx http-server -p 3000
+
+# Option 3: Using Live Server (VS Code extension)
+# Right-click on index.html and select "Open with Live Server"
+```
+
+3. **Setup Backend**
+```bash
+# Navigate to backend directory
+cd ../backend
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+
+# Edit .env file with your configuration
+nano .env
+
+# Start the development server
+npm run dev
+```
+
+4. **Access the Application**
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:3001
+- API Documentation: http://localhost:3001/api/docs (if implemented)
+
+## 📁 Project Structure
+
+```
+mindcare-hub/
+├── frontend/
+│   ├── index.html          # Main HTML file
+│   ├── styles.css          # CSS styles
+│   ├── script.js           # JavaScript functionality
+│   ├── manifest.json       # PWA manifest
+│   └── sw.js              # Service worker (optional)
+├── backend/
+│   ├── server.js           # Express server
+│   ├── package.json        # Dependencies
+│   ├── database.json       # Local database file
+│   ├── uploads/            # Uploaded files
+│   ├── backups/            # Database backups
+│   └── tests/              # Test files
+├── docs/
+│   ├── API.md              # API documentation
+│   ├── DEPLOYMENT.md       # Deployment guide
+│   └── CONTRIBUTING.md     # Contribution guidelines
+└── README.md               # This file
+```
+
+## 🔧 Configuration
+
+### Environment Variables (.env file)
+
+```bash
+# Server Configuration
+NODE_ENV=development
+PORT=3001
+FRONTEND_URL=http://localhost:3000
+
+# Security
+JWT_SECRET=your-super-secret-jwt-key-here
+BCRYPT_ROUNDS=12
+
+# Email Configuration (for notifications)
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASSWORD=your-app-specific-password
+EMAIL_SERVICE=gmail
+
+# Database (if using external database)
+DATABASE_URL=your-database-connection-string
+
+# External APIs (optional)
+OPENAI_API_KEY=your-openai-key-for-enhanced-chat
+TWILIO_SID=your-twilio-sid-for-sms
+TWILIO_TOKEN=your-twilio-token
+
+# Analytics (optional)
+GOOGLE_ANALYTICS_ID=UA-XXXXXXXX-X
+```
+
+### Frontend Configuration
+
+The frontend uses vanilla HTML, CSS, and JavaScript, so no build process is required. However, you can customize:
+
+1. **Colors and Themes** - Edit CSS variables in `styles.css`
+2. **API Endpoints** - Update API URLs in `script.js`
+3. **Features** - Enable/disable features by modifying JavaScript
+
+### Backend Configuration
+
+The backend uses Node.js with Express. Key configurations:
+
+1. **Database** - Currently uses file-based storage (database.json)
+2. **Authentication** - JWT-based with configurable expiration
+3. **Rate Limiting** - Configurable request limits
+4. **File Uploads** - Multer for handling file uploads
+
+## 🔗 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/profile` - Get user profile
+
+### Mood Tracking
+- `POST /api/mood` - Log mood entry
+- `GET /api/mood` - Get mood history
+- `GET /api/mood/analytics` - Get mood analytics
+
+### Journal
+- `POST /api/journal` - Create journal entry
+- `GET /api/journal` - Get journal entries
+
+### Resources
+- `GET /api/resources` - Get mental health resources
+- `GET /api/resources/:id` - Get specific resource
+
+### Counselors
+- `GET /api/counselors` - Get counselor directory
+- `GET /api/counselors/:id` - Get specific counselor
+- `POST /api/appointments` - Book appointment
+
+### Support
+- `GET /api/emergency-contacts` - Get crisis helplines
+- `POST /api/chat/sessions` - Start chat session
+- `POST /api/feedback` - Submit feedback
+
+For detailed API documentation, see [docs/API.md](docs/API.md)
+
+## 🎨 Customization
+
+### Changing Colors and Themes
+
+Edit the CSS variables in `styles.css`:
+
+```css
+:root {
+    /* Primary Colors */
+    --primary-500: #0ea5e9;
+    --secondary-500: #22c55e;
+    --accent-500: #f97316;
+    
+    /* Dark Mode Colors */
+    --dark-bg-primary: #0a0e1a;
+    --dark-text-primary: #ffffff;
+}
+```
+
+### Adding New Features
+
+1. **Frontend**: Add HTML structure, CSS styles, and JavaScript functionality
+2. **Backend**: Create new API endpoints in `server.js`
+3. **Integration**: Update frontend to communicate with new backend endpoints
+
+### Customizing Content
+
+1. **Resources**: Edit the resources array in `server.js`
+2. **Counselors**: Update counselor data in the database
+3. **Emergency Contacts**: Modify emergency contact information
+
+## 🧪 Testing
+
+### Running Tests
+
+```bash
+# Backend tests
+cd backend
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Frontend testing (manual)
+# Open the application in multiple browsers and test functionality
+```
+
+### Test Coverage
+
+The backend includes comprehensive tests for:
+- Authentication and authorization
+- API endpoints and validation
+- Data persistence and retrieval
+- Error handling and edge cases
+
+## 🚀 Deployment
+
+### Frontend Deployment
+
+The frontend can be deployed to any static hosting service:
+
+**Netlify:**
+```bash
+# Build (if needed)
+# No build step required for vanilla HTML/CSS/JS
+
+# Deploy
+netlify deploy --prod --dir=frontend
+```
+
+**Vercel:**
+```bash
+vercel --prod frontend/
+```
+
+**GitHub Pages:**
+1. Push frontend files to a repository
+2. Enable GitHub Pages in repository settings
+3. Set source to main branch
+
+### Backend Deployment
+
+**Heroku:**
+```bash
+# Login to Heroku
+heroku login
+
+# Create app
+heroku create mindcare-hub-api
+
+# Set environment variables
+heroku config:set NODE_ENV=production
+heroku config:set JWT_SECRET=your-secret-key
+
+# Deploy
+git subtree push --prefix=backend heroku main
+```
+
+**Railway:**
+```bash
+# Install Railway CLI
+npm install -g @railway/cli
+
+# Login and deploy
+railway login
+railway deploy --service backend
+```
+
+**DigitalOcean App Platform:**
+1. Connect your repository
+2. Configure build and run commands
+3. Set environment variables
+4. Deploy
+
+For detailed deployment instructions, see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
+
+## 🔒 Security Considerations
+
+### Data Protection
+- All passwords are hashed using bcrypt
+- JWT tokens have configurable expiration
+- Sensitive data is never logged
+- File uploads are validated and sanitized
+
+### Privacy Features
+- Anonymous mood tracking available
+- User data export functionality
+- GDPR-compliant data handling
+- Optional data collection settings
+
+### Security Headers
+- Helmet.js for security headers
+- CORS configuration
+- Rate limiting on all endpoints
+- Input validation and sanitization
+
+## 🤝 Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Ensure all tests pass
+6. Submit a pull request
+
+### Code Style
+
+- Use ESLint and Prettier for consistent formatting
+- Follow existing naming conventions
+- Add comments for complex functionality
+- Update documentation when needed
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+### Getting Help
+
+- **Documentation**: Check the docs/ directory
+- **Issues**: Report bugs on GitHub Issues
+- **Discussions**: Join GitHub Discussions for questions
+- **Email**: Contact support@mindcarehub.com
+
+### Emergency Resources
+
+If you're in crisis, please contact:
+- **Emergency Services**: 100 / 108
+- **KIRAN Mental Health Helpline**: 1800-599-0019
+- **Vandrevala Foundation**: 9999-666-555
+
+## 🙏 Acknowledgments
+
+- National Institute of Mental Health and Neurosciences (NIMHANS)
+- Mental health professionals who provided guidance
+- Students who participated in user research
+- Open source libraries and contributors
+
+## 📊 Project Status
+
+- ✅ Core functionality complete
+- ✅ Security implementation
+- ✅ Mobile responsiveness
+- ✅ API documentation
+- 🚧 Advanced analytics (in progress)
+- 🚧 Mobile app development (planned)
+- 🚧 Integration with healthcare systems (planned)
+
+## 🔄 Changelog
+
+### Version 1.0.0 (Current)
+- Initial release with core features
+- Anonymous mood tracking
+- Resource directory
+- Counselor finder
+- Crisis support
+- Basic chat assistance
+
+For detailed changelog, see [CHANGELOG.md](CHANGELOG.md)
+
+---
+
+**Built with ❤️ for student mental health and wellbeing**
+
+*This platform is designed to support mental health but is not a replacement for professional medical advice, diagnosis, or treatment. Always seek the advice of qualified health providers with any questions you may have regarding your mental health.*
